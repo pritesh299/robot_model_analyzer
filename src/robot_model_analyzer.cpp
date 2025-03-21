@@ -26,8 +26,8 @@ public:
         subscription_ = this->create_subscription<std_msgs::msg::String>(
             "/robot_description", 10,
             std::bind(&RobotModelAnalyzer::urdf_callback, this, std::placeholders::_1));
-        
-        this->declare_parameter<std::string>("ee_frame","gripper_link");
+            
+        this->declare_parameter<std::string>("ee_frame","ee_link");
         this->get_parameter("ee_frame", ee_frame_);
 
         package_name_ = "robot_model_analyzer";
